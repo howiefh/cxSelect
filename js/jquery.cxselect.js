@@ -338,6 +338,8 @@
       'visibility': ''
     });
 
+    self.dom.box.trigger('change_options', { index: index, select: _select, data: data });
+
     // 初次加载设置默认值
     if (typeof _select.attr('data-value') === 'string') {
       _select.val(String(_select.attr('data-value'))).removeAttr('data-value');

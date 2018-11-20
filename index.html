@@ -208,16 +208,25 @@ a:hover{color:#00f;}
 
   $.cxSelect.defaults.url = urlChina;
 
+
   // 默认
-  $('#city_china').cxSelect({
+  var chinaSelect = $('#city_china').cxSelect({
     selects: ['province', 'city', 'area']
   });
 
+  chinaSelect.on('change_options', function(e, o) {
+    console.log(o)
+  })
+
   // 设置默认值及选项标题
-  $('#city_china_val').cxSelect({
+  var chinaCitySelect = $('#city_china_val').cxSelect({
     selects: ['province', 'city', 'area'],
     emptyStyle: 'none'
   });
+
+  chinaCitySelect.on('change_options', function(e, o) {
+    console.log(o)
+  })
 
   // 全球主要国家城市联动
   $('#global_location').cxSelect({
